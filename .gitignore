@@ -1,0 +1,27 @@
+# Dependency directories (if using package managers)
+node_modules/
+bower_components/
+
+# Build outputs and temporary caches
+dist/
+build/
+.cache/
+.sass-cache/
+
+# Environment variables and credentials
+.env
+*.env
+secrets.txt
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDEs and Code Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
