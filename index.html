@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3R Automobile | Reduce Recycle Reuse</title>
+    <meta name="description" content="Safe, legal & eco-friendly vehicle disposal. Government Authorized Vehicle Scrapping Facility in Mumbai.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2b5a3c', // Forest Green from 3R Logo
+                        secondary: '#1e2a40', // Dark Blue from 3R Logo
+                        accent: '#f59e0b' // Amber
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Image Logo -->
+            <div class="flex-shrink-0 flex items-center cursor-pointer">
+                <a href="#home">
+                    <img src="assets/images/3r-logo.webp" alt="3R Automobile Logo" class="h-16 w-auto object-contain">
+                </a>
+            </div>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 font-medium text-gray-600 items-center">
+                <a href="#home" class="hover:text-primary transition">Home</a>
+                <a href="#why-us" class="hover:text-primary transition">Why Us</a>
+                <a href="#vehicles" class="hover:text-primary transition">Vehicles We Scrap</a>
+                <a href="#policy" class="hover:text-primary transition">Policy Benefits</a>
+                <a href="#process" class="hover:text-primary transition">Process</a>
+                <button onclick="toggleModal('careersModal')" class="hover:text-primary transition font-medium cursor-pointer">Careers</button>
+            </nav>
+            <!-- CTA / Contact -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+919876543210" class="text-secondary font-bold text-lg hover:text-primary transition"><i class="fa-solid fa-phone text-primary mr-2"></i>+91 98765 43210</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-secondary text-white py-20 lg:py-32">
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Dark Blue/Black Gradient Overlay for a premium look and text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-black/90 z-10"></div>
+            <!-- High-quality dark car silhouette background -->
+            <img src="https://images.unsplash.com/photo-1503376713963-39c28a8d052b?q=80&w=2070&auto=format&fit=crop" alt="Premium Dark Auto Background" class="w-full h-full object-cover object-center opacity-70">
+        </div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Content -->
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-green-400 font-semibold text-sm mb-4 border border-green-500/30 shadow-sm">
+                    <i class="fa-solid fa-check-circle mr-1"></i> MoRTH Authorized RVSF
+                </span>
+                <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-4">3R Automobile</h2>
+                <h3 class="text-2xl font-bold text-gray-300 italic mb-6 text-primary drop-shadow-md">"Recycle Today Drive Green Tomorrow"</h3>
+                <p class="text-lg text-gray-300 mb-8">Safe, legal & eco-friendly vehicle disposal. From two-wheelers to heavy commercial — we handle it all with government certification and provide instant Certificate of Deposit.</p>
+                <div class="flex gap-4 flex-wrap">
+                    <a href="#contact" class="bg-primary hover:bg-green-800 text-white px-6 py-3 rounded-md font-bold transition shadow-lg transform hover:-translate-y-1">Book Free Pickup</a>
+                    <a href="#why-us" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white px-6 py-3 rounded-md font-bold transition transform hover:-translate-y-1">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Lead Generation Form (Scrap Value Calculator) -->
+            <div class="bg-white rounded-xl shadow-2xl p-8 text-gray-800 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <!-- Decorative colored line -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary rounded-t-xl"></div>
+                
+                <h3 class="text-2xl font-bold mb-2 text-secondary">Scrap Value Calculator</h3>
+                <p class="text-sm text-gray-500 mb-6">Enter details for an instant scrap value estimate.</p>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary transition" placeholder="Enter Full Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary transition" placeholder="+91 XXXXX XXXXX">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Vehicle Type</label>
+                            <select class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary bg-white transition">
+                                <option>Scooter/Bike</option>
+                                <option>Hatchback/Sedan</option>
+                                <option>SUV/MUV</option>
+                                <option>Commercial/Truck</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Age of Vehicle</label>
+                            <select class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary bg-white transition">
+                                <option>10 - 15 Years</option>
+                                <option>15+ Years</option>
+                                <option>Accidental/Damaged</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" class="w-full bg-primary hover:bg-green-800 text-white font-bold py-3 rounded-md transition mt-4 shadow-md transform hover:scale-[1.02]">
+                        Get Final Quote
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-6">Why Trust <span class="text-primary">3R Automobile?</span></h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">We understand that handing over your vehicle involves legal concerns and emotional attachment. As a completely certified facility, we take the burden completely off your shoulders.</p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">No endless RTO visits, no hidden towing fees, and no haggling with local unauthorized dealers. Just a straightforward, secure, and highly rewarding process that guarantees the highest legal value for your vehicle.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                            <i class="fa-solid fa-file-signature text-primary mt-1 mr-4 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-secondary text-lg">Complete Liability Release</h4>
+                                <p class="text-sm text-gray-500 mt-1">We handle the official RTO deregistration. The moment you hand over the keys, you are permanently free from any future legal or accidental liabilities.</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                            <i class="fa-solid fa-money-bill-transfer text-primary mt-1 mr-4 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-secondary text-lg">Instant & Transparent Payment</h4>
+                                <p class="text-sm text-gray-500 mt-1">No delayed cheques. Get paid on the spot based on transparent, digital weighing and live metal rates.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right Grid of Benefits -->
+                <div class="grid sm:grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="bg-white p-6 rounded-xl border-t-4 border-primary shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl mb-4">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h4 class="font-bold text-secondary mb-2 text-lg">Best Value Guarantee</h4>
+                        <p class="text-sm text-gray-600">Accurate digital weighing ensures you get the exact maximum scrap value your vehicle deserves.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border-t-4 border-secondary shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mt-0 sm:mt-8">
+                        <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-2xl mb-4">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h4 class="font-bold text-secondary mb-2 text-lg">Free Doorstep Towing</h4>
+                        <p class="text-sm text-gray-600">Whether your vehicle runs, is damaged, or entirely dead, our team will pick it up from your location at zero cost.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border-t-4 border-secondary shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-2xl mb-4">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h4 class="font-bold text-secondary mb-2 text-lg">100% Legal & Safe</h4>
+                        <p class="text-sm text-gray-600">Government authorized process ensuring your chassis number is officially and legally destroyed.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border-t-4 border-primary shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 mt-0 sm:mt-8">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl mb-4">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h4 class="font-bold text-secondary mb-2 text-lg">Instant CoD</h4>
+                        <p class="text-sm text-gray-600">Walk away with your Certificate of Deposit (CoD) instantly to claim exclusive government discounts on new cars.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles We Scrap Section -->
+    <section id="vehicles" class="py-20 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Vehicles We Scrap</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 text-lg">From two-wheelers to heavy commercial vehicles — <span class="font-semibold text-primary">every type is accepted</span> at our facility.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Vehicle Card 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop" alt="Two Wheeler" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto -mt-12 mb-3 shadow-md relative z-10 text-primary text-xl">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-secondary mb-1">Two-Wheelers</h4>
+                        <p class="text-sm text-gray-500">Motorcycles, Scooters & Mopeds</p>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop" alt="Hatchbacks and Sedans" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto -mt-12 mb-3 shadow-md relative z-10 text-primary text-xl">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-secondary mb-1">Cars & Sedans</h4>
+                        <p class="text-sm text-gray-500">Hatchbacks, Sedans & Minivans</p>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800&auto=format&fit=crop" alt="SUV and MUV" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto -mt-12 mb-3 shadow-md relative z-10 text-primary text-xl">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-secondary mb-1">SUVs & MUVs</h4>
+                        <p class="text-sm text-gray-500">Utility Vehicles & Off-roaders</p>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 4 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop" alt="Commercial Vehicles" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto -mt-12 mb-3 shadow-md relative z-10 text-primary text-xl">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-secondary mb-1">Commercial</h4>
+                        <p class="text-sm text-gray-500">Trucks, Buses & Heavy Vehicles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Policy Section -->
+    <section id="policy" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Vehicle Scrappage Policy Benefits</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">The Government mandates deregistration of unfit vehicles through Registered Vehicle Scrapping Facilities (RVSF). Here is what you gain with 3R Automobile.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary mb-2">New Vehicle Rebate</h4>
+                    <p class="text-sm text-gray-600">Up to 15% discount on purchasing a new vehicle using the Certificate of Deposit.</p>
+                </div>
+                <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary mb-2">Green Tax Exemption</h4>
+                    <p class="text-sm text-gray-600">Save heavily by exempting your new vehicle from standard green taxes.</p>
+                </div>
+                <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-road"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary mb-2">Road Tax Concession</h4>
+                    <p class="text-sm text-gray-600">Up to 25% concession on road tax for personal vehicles in Maharashtra.</p>
+                </div>
+                <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary mb-2">100% Eco-Friendly</h4>
+                    <p class="text-sm text-gray-600">Scientific dismantling ensuring zero soil and air pollution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="py-20 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Four Simple Steps to Scrap</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Legally scrap your vehicle and get the best value without stepping out of your home.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Desktop Connecting Line -->
+                <div class="hidden md:block absolute top-10 left-[10%] right-[10%] h-1 bg-green-100 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative text-center group" data-aos="fade-right" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold z-10 relative shadow-md group-hover:bg-primary group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary text-lg mb-2">Submit Request</h4>
+                    <p class="text-sm text-gray-600">Fill out our online form or call us to share your vehicle details.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative text-center group" data-aos="fade-right" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold z-10 relative shadow-md group-hover:bg-primary group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-truck-pickup"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary text-lg mb-2">Free Pickup</h4>
+                    <p class="text-sm text-gray-600">We arrange complimentary towing from your specified location.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative text-center group" data-aos="fade-right" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold z-10 relative shadow-md group-hover:bg-primary group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary text-lg mb-2">Legal Scrapping</h4>
+                    <p class="text-sm text-gray-600">Vehicle is dismantled as per MoRTH guidelines at our facility.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative text-center group" data-aos="fade-right" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold z-10 relative shadow-md group-hover:bg-primary group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h4 class="font-bold text-secondary text-lg mb-2">Get Certificate</h4>
+                    <p class="text-sm text-gray-600">Receive Certificate of Deposit (CoD) & instant scrap value payment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warning Section -->
+    <section class="py-16 bg-red-50 border-y border-red-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 text-center md:text-left" data-aos="fade-right">
+                    <div class="inline-block animate-bounce mb-4">
+                        <i class="fa-solid fa-triangle-exclamation text-6xl text-red-500 drop-shadow-md"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-red-900">Risks of Unauthorized Scrapping</h2>
+                    <p class="text-red-700 mt-2 text-sm">Don't fall for unregistered local scrap dealers. Protect yourself legally.</p>
+                </div>
+                <div class="md:w-2/3 grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-red-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-xmark text-red-500 mt-1 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-red-900">Heavy Fines</h4>
+                            <p class="text-sm text-red-800/80">Penalties up to ₹10,000 and vehicle seizure under MV Act.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-red-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa-solid fa-xmark text-red-500 mt-1 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-red-900">Legal Liability</h4>
+                            <p class="text-sm text-red-800/80">Illegally sold parts can be traced back to you in criminal cases.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-red-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fa-solid fa-xmark text-red-500 mt-1 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-red-900">Ongoing Taxes</h4>
+                            <p class="text-sm text-red-800/80">Without RTO deregistration, your tax liability continues indefinitely.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-red-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fa-solid fa-xmark text-red-500 mt-1 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-red-900">No Gov Incentives</h4>
+                            <p class="text-sm text-red-800/80">Lose out on road tax rebates and new car discounts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-secondary text-gray-300 pt-16 pb-8 border-t-[6px] border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Company Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <!-- Text Logo -->
+                    <div class="mb-6 inline-block bg-white/5 p-4 rounded-xl border border-white/10">
+                        <span class="text-3xl font-extrabold text-white tracking-tight leading-none">3R <span class="text-primary">Automobile</span></span><br>
+                        <span class="text-[0.65rem] font-bold text-primary tracking-[0.2em] uppercase mt-1 inline-block">Reduce • Recycle • Reuse</span>
+                    </div>
+                    <p class="mb-2 font-bold italic text-white text-lg">"Recycle Today Drive Green Tomorrow"</p>
+                    <p class="mb-6 text-sm text-gray-400">3R Automobile is a Government Authorized Registered Vehicle Scrapping Facility certified by Ministry of Road Transport & Highways (MoRTH).</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition duration-300"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition duration-300"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-primary transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i>Home</a></li>
+                        <li><a href="#why-us" class="hover:text-primary transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i>Why Choose Us</a></li>
+                        <li><a href="#policy" class="hover:text-primary transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i>Scrappage Policy</a></li>
+                        <li><a href="#process" class="hover:text-primary transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i>How It Works</a></li>
+                        <li><a href="#vehicles" class="hover:text-primary transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i>Vehicles We Scrap</a></li>
+                        <li><button onclick="toggleModal('careersModal')" class="hover:text-primary transition flex items-center cursor-pointer text-left w-full"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i>Careers</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block">Contact & Location</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <span class="leading-relaxed">5, Sai Shakti Complex, H. S. Joshi Road, Opp. Jani Maidan, Dahisar – East, Mumbai - 400 068</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-primary"></i>
+                            <a href="tel:+919876543210" class="hover:text-white transition">+91 98765 43210</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary"></i>
+                            <a href="mailto:info@3rautomobile.com" class="hover:text-white transition">info@3rautomobile.com</a>
+                        </li>
+                    </ul>
+                    <!-- WhatsApp Click-to-Chat Button -->
+                    <a href="https://wa.me/919876543210?text=Hello,%20I%20am%20interested%20in%20scrapping%20my%20vehicle." target="_blank" rel="noopener noreferrer" class="inline-flex items-center mt-6 bg-[#25D366] hover:bg-[#128C7E] text-white px-6 py-3 rounded-lg font-semibold transition shadow-md transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 3R Automobile. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex gap-4">
+                    <span class="flex items-center"><i class="fa-solid fa-shield-halved text-primary mr-1"></i> MoRTH Authorized</span>
+                    <span class="flex items-center"><i class="fa-solid fa-certificate text-primary mr-1"></i> ISO Certified</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Careers Modal -->
+    <div id="careersModal" class="fixed inset-0 z-[100] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleModal('careersModal')"></div>
+        
+        <!-- Modal Content -->
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+            <div class="relative bg-white rounded-xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-lg w-full">
+                
+                <!-- Header -->
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                    <h3 class="text-xl leading-6 font-bold text-secondary">Join 3R Automobile</h3>
+                    <button type="button" onclick="toggleModal('careersModal')" class="text-gray-400 hover:text-gray-500 transition">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Body / Form -->
+                <div class="px-6 py-6">
+                    <p class="text-sm text-gray-500 mb-6">We are always looking for passionate individuals to join our eco-friendly mission. Fill out the form below and upload your resume.</p>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" required class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary transition" placeholder="Enter Full Name">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" required class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary transition" placeholder="you@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" required class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary transition" placeholder="+91 XXXXX XXXXX">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Position Applied For</label>
+                            <select class="w-full border-gray-300 rounded-md border p-2 focus:ring-primary focus:border-primary bg-white transition">
+                                <option>Select a position...</option>
+                                <option>Facility Manager</option>
+                                <option>Dismantling Technician</option>
+                                <option>Customer Support Executive</option>
+                                <option>Logistics / Towing Coordinator</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Upload Resume (PDF, DOCX)</label>
+                            <input type="file" accept=".pdf,.doc,.docx" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition cursor-pointer border border-gray-300 rounded-md p-1">
+                        </div>
+                        <button type="button" onclick="toggleModal('careersModal');" class="w-full bg-primary hover:bg-green-800 text-white font-bold py-3 rounded-md transition mt-6 shadow-md transform hover:scale-[1.02]">
+                            Submit Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Modal Toggle Logic
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore background scrolling
+            }
+        }
+
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 50, // offset (in px) from the original trigger point
+            duration: 800, // values from 0 to 3000, with step 50ms
+            easing: 'ease-out-cubic', // default easing for AOS animations
+        });
+    </script>
+</body>
+</html>
