@@ -17,6 +17,8 @@ export default async function handler(req, res) {
         if (err) return res.status(500).json({ error: 'Form parsing failed' });
 
         try {
+            console.log("My email is - ", process.env.EMAIL_USER)
+            console.log("My password is - ", process.env.EMAIL_PASS?.slice(0,5))
             // 1. Setup Email Transporter using your Gmail
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
