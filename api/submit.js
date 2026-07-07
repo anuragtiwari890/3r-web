@@ -32,7 +32,7 @@ export default async function handler(req, res) {
             const isCareer = fields.formType?.[0] === 'career';
             let mailOptions = {
                 from: process.env.EMAIL_USER,
-                to: process.env.EMAIL_USER, // Sends email to yourself
+                to: "info@3rautomobile.com", // Sends email to yourself
                 subject: isCareer ? `New Job Application: ${fields.name}` : `New Scrap Lead: ${fields.name}`,
             };
 
